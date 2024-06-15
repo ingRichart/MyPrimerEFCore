@@ -8,53 +8,51 @@
         <h1 class="display-4">Alta de Doctores</h1>
     </div>
 
-    
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 <form asp-controller="Doctores" asp-action="DoctoresAdd" >
 
     <div class="mb-3">
-        <label for="nombre"  class="form-label"> Nombre</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el nombre del doctor" />
+        <label asp-for="Name" class="form-label"> Nombre</label>
+        <input type="text" class="form-control" asp-for="Name" placeholder="Escriba el nombre del doctor" />
 
     </div>
     
     <div class="mb-3">
-        <label for="apellido"  class="form-label"> Apellido</label>
-        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Escriba el apellido del doctor" />
+        <label asp-for="LastName"  class="form-label"> Apellido</label>
+        <input type="text" class="form-control" asp-for="LastName" placeholder="Escriba el apellido del doctor" />
 
     </div>
 
     <div class="mb-3">
-        <label for="edad"  class="form-label"> Edad</label>
-        <input type="text" class="form-control" id="edad" name="edad" placeholder="Escriba la edad del doctor" />
+        <label asp-for="Age"  class="form-label"> Edad</label>
+        <input type="text" class="form-control" asp-for="Age" placeholder="Escriba la edad del doctor" />
 
     </div>
 
     <div class="mb-3">
-        <label for="especialidad"  class="form-label"> Especialidad</label>
-        <input type="text" class="form-control" id="especialidad" name="especialidad" placeholder="Escriba la especialidad del doctor" />
+        <label asp-for="specialism" class="form-label"> Especialidad</label>
+        <input type="text" class="form-control" asp-for="specialism" placeholder="Escriba la especialidad del doctor" />
 
     </div>
 
     <div class="mb-3">
-        <label for="telefono"  class="form-label"> Telefono</label>
-        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Escriba el telefono del doctor" />
+        <label asp-for="Tel"  class="form-label"> Telefono</label>
+        <input type="text" class="form-control" asp-for="Tel"  placeholder="Escriba el telefono del doctor" />
 
     </div>
 
     <div class="mb-3">
-        <label for="celular"  class="form-label"> Celular</label>
-        <input type="text" class="form-control" id="celular" name="celular" placeholder="Escriba el celular del doctor" />
+        <label asp-for="Cel" class="form-label"> Celular</label>
+        <input type="text" class="form-control" asp-for="Cel" placeholder="Escriba el celular del doctor" />
 
     </div>
 
     <div class="mb-3">
-        <label for="direccion"  class="form-label"> Dirección</label>
-        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Escriba la dirección del doctor" />
+        <label asp-for="address"  class="form-label"> Dirección</label>
+        <input type="text" class="form-control" asp-for="address" placeholder="Escriba la dirección del doctor" />
 
     </div>
-         
-    <div asp-validation-summary="All" class="Text-danger"></div>
 
     <button type="submit" class="btn btn-primary">Guardar</button>
     <a asp-controller="Doctores" asp-action="DoctorList" class="btn btn-secundary mb-3"> Regresar </a>

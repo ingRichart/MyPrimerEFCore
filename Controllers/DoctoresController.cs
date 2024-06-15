@@ -33,6 +33,8 @@ public IActionResult DoctoresAdd(DoctoresModel model)
         return View(model);
     }
 
+    
+
     // Crear el objeto Doctores y asignar los valores del modelo
     Doctores doctores = new Doctores();
     doctores.Id = Guid.NewGuid();

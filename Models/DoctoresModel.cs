@@ -5,8 +5,13 @@ namespace CRUD_Students_POO2.Models
 {
     public class DoctoresModel
     {
+        public DoctoresModel()
+        {
+        }
+
         public Guid Id {get; set;}
-         [Required(ErrorMessage = "El {0} es un campo requerido")]
+        
+        [Required(ErrorMessage = "El {0} es un campo requerido")]
         [StringLength(maximumLength: 40, MinimumLength = 3, ErrorMessage = "La longitud del campo {0} debe ser entre mínimo {2} y máximo de {1}")]
         public string Name { get; set; } = null!;
 
