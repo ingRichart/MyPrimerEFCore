@@ -1,0 +1,59 @@
+@model IEnumerable<DoctoresModel>;
+
+    @{
+        ViewData["Title"] = "Listado de Doctores";
+        DateTime fechaRegistro = new DateTime(2024,05,20);
+    }
+
+    <div class="text-center">
+
+
+        <h2>@DateTime.Now</h2>
+        <i>@fechaRegistro.ToLongDateString()</i>
+
+        <h1 class="display-5">Listado de Doctores</h1>
+        <a asp-controller="Doctores" asp-action="DoctoresAdd" class="btn btn-primary mb-3"> Agregar Doctor </a>
+
+    </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Especialidad</th>
+                    <th>Telefono</th>
+                    <th>Celular</th>
+                    <th>Dirección</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var doctor in Model)
+                {
+                    <tr>
+                        
+                        <td>  @doctor.Name </td>
+                        <td>  @doctor.LastName </td>
+                        <td>  @doctor.Age </td>
+                        <td>  @doctor.specialism </td>
+                        <td>  @doctor.Tel </td>
+                        <td>  @doctor.Cel </td>
+                        <td>  @doctor.address </td>
+
+                        <td> 
+                            <a class="btn btn-primary" asp-controller="Doctores" asp-action="DoctoresEdit" asp-route-id="@doctor.Id">Editar</a>
+
+                            <a class="btn btn-danger" asp-controller="Doctores" asp-action="DoctoresShowToDelete" asp-route-id="@doctor.Id">Borrar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+
+            </tfoot>
+        </table>
+    
